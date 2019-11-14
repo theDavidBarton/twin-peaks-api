@@ -33,13 +33,29 @@ function endpointCreation() {
     // providing a dynamic endpoint for quotes
     app.get('/api/quotes/:id', async (req, res) => {
       let id = req.params.id
-      twinpeaks.quotes[id] ? res.json(twinpeaks.quotes[id]) : res.json({ error: 'no such id!' })
+      let idResult = twinpeaks.quotes.filter(quote => {
+        if (quote.id == id) return quote
+      })
+
+      idResult ? res.json(idResult) : res.json({ error: 'no such id!' })
       console.log(`/api/quotes/${id} endpoint has been called!`)
+    })
+
+    // providing a dynamic endpoint for searches
+    app.get('/api/quotes', async (req, res) => {
+      let query = req.query.q
+      let personResult = twinpeaks.quotes.filter(quote => {
+        if (quote.persons == query) return quote
+      })
+      res.json(personResult)
+      console.log(`/api/quotes?q=${query} endpoint has been called!`)
     })
 
     app.listen(port)
 
-    console.log(`API is listening on ${port}\nEndpoint is ready at: localhost:${port}/api/quotes/`)
+    console.log(
+      `API is listening on ${port}\nEndpoint is ready at: localhost:${port}/api/quotes/ \n... and at /api/quotes?q=[search]`
+    )
   } catch (e) {
     console.error(e)
   }
