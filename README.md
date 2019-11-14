@@ -115,7 +115,7 @@ Run: `yarn scrape` or `node quoteCollector.js` to update the JSON file.
 
 # Copyright
 
-## HTTP status descriptions
+## Quotes
 
 See in `copyright` for each quotes. Content is licensed under CC-BY-SA 3.0.
 
