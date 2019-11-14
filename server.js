@@ -43,7 +43,7 @@ function endpointCreation() {
         if (quote.id == randomizer()) return quote
       })
 
-      recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' })
+      recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' }) // TODO: error handling for the missing id's (scraping errors)
       console.log(`/api/quotes/recommend endpoint has been called!`)
     })
 
@@ -61,8 +61,9 @@ function endpointCreation() {
     // providing a dynamic endpoint for searches
     app.get('/api/quotes', async (req, res) => {
       let query = req.query.q
+      let queryRegex = RegExp(query, 'gi')
       let personResult = twinpeaks.quotes.filter(quote => {
-        if (quote.quoteText.includes(query)) return quote // includes() is the worst choice I could made here
+        if (queryRegex.test(quote.quoteText)) return quote
       })
       res.json(personResult)
       console.log(`/api/quotes?q=${query} endpoint has been called!`)

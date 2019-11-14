@@ -10,31 +10,43 @@ Launch the express app with: `yarn start` or `node server.js`. Then you have thr
 
 #### I. Random quote endpoint
 
-`/api/quotes/recommend`
+endpoint: `/api/quotes/recommend`
 
 http://localhost:5000/api/quotes/recommend
 
-```javascript
-{"id":62,"quoteText":"Donna Hayward: There's things you can't get in books.\nHarold Smith: There are things you can't get anywhere… but we dream they can be found in other people.","quoteTextOnly":"There's things you can't get in books.\nThere are things you can't get anywhere… but we dream they can be found in other people.","persons":["Donna Hayward","Harold Smith"],"copyright":{"license":"CC-BY-SA 3.0.","licenseDetails":"https://creativecommons.org/licenses/by-sa/3.0/","source":"https://en.wikiquote.org/wiki/Twin_Peaks"}}
+```json
+[
+  {
+    "id": 62,
+    "quoteText": "Donna Hayward: There's things you can't get in books.\nHarold Smith: There are things you can't get anywhere… but we dream they can be found in other people.",
+    "quoteTextOnly": "There's things you can't get in books.\nThere are things you can't get anywhere… but we dream they can be found in other people.",
+    "persons": ["Donna Hayward", "Harold Smith"],
+    "copyright": {
+      "license": "CC-BY-SA 3.0.",
+      "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://en.wikiquote.org/wiki/Twin_Peaks"
+    }
+  }
+]
 ```
 
 #### II. Quote by ID endpoint
 
-`/api/quotes/{id}`
+endpoint: `/api/quotes/{id}`
 
 e.g.: http://localhost:5000/api/quotes/20
 
-```javascript
-;[
+```json
+[
   {
-    id: 20,
-    quoteText: 'Dale Cooper: Nothing beats the taste sensation when maple syrup [claps his hands] collides with ham.',
-    quoteTextOnly: 'Nothing beats the taste sensation when maple syrup [claps his hands] collides with ham.',
-    persons: ['Dale Cooper'],
-    copyright: {
-      license: 'CC-BY-SA 3.0.',
-      licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
-      source: 'https://en.wikiquote.org/wiki/Twin_Peaks'
+    "id": 20,
+    "quoteText": "Dale Cooper: Nothing beats the taste sensation when maple syrup [claps his hands] collides with ham.",
+    "quoteTextOnly": "Nothing beats the taste sensation when maple syrup [claps his hands] collides with ham.",
+    "persons": ["Dale Cooper"],
+    "copyright": {
+      "license": "CC-BY-SA 3.0.",
+      "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://en.wikiquote.org/wiki/Twin_Peaks"
     }
   }
 ]
@@ -42,68 +54,54 @@ e.g.: http://localhost:5000/api/quotes/20
 
 #### III. Quote by search parameter
 
-`/api/quotes?q={keyword}`
+endpoint: `/api/quotes?q={keyword}` (spaces will be decoded like: ?q=the%20man%20from%20another%20place)
 
-e.g.: http://localhost:5000/api/quotes?q=Gordon%20Cole
+e.g.: http://localhost:5000/api/quotes?q=giant
 
-```javascript
-;[
+```json
+[
   {
-    id: 64,
-    quoteText:
-      "Gordon Cole: YOU'LL HAVE TO SPEAK UP. HEARING'S GONE. LONG STORY. GOT THESE THINGS CRANKED UP TO THE MAX.",
-    quoteTextOnly: "YOU'LL HAVE TO SPEAK UP. HEARING'S GONE. LONG STORY. GOT THESE THINGS CRANKED UP TO THE MAX.",
-    persons: ['Gordon Cole'],
-    copyright: {
-      license: 'CC-BY-SA 3.0.',
-      licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
-      source: 'https://en.wikiquote.org/wiki/Twin_Peaks'
+    "id": 42,
+    "quoteText": "The Giant: The owls are not what they seem.",
+    "quoteTextOnly": "The owls are not what they seem.",
+    "persons": ["The Giant"],
+    "copyright": {
+      "license": "CC-BY-SA 3.0.",
+      "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://en.wikiquote.org/wiki/Twin_Peaks"
     }
   },
   {
-    id: 65,
-    quoteText: 'Gordon Cole: COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA.',
-    quoteTextOnly: 'COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA.',
-    persons: ['Gordon Cole'],
-    copyright: {
-      license: 'CC-BY-SA 3.0.',
-      licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
-      source: 'https://en.wikiquote.org/wiki/Twin_Peaks'
+    "id": 54,
+    "quoteText": "Sheriff Truman: So, what did this giant sound like, huh? I mean, did he have a big, booming voice or what?\nDale Cooper: No, no! He spoke softly, distinctly.\nAlbert Rosenfield: And you gave him the beans you were supposed to use to buy a cow.\nDale Cooper: No, Albert! I gave him my ring.\nAlbert Rosenfield: Okay. Uh, confining my conclusions to the planet Earth…",
+    "quoteTextOnly": "So, what did this giant sound like, huh? I mean, did he have a big, booming voice or what?\nNo, no! He spoke softly, distinctly.\nAnd you gave him the beans you were supposed to use to buy a cow.\nNo, Albert! I gave him my ring.\nOkay. Uh, confining my conclusions to the planet Earth…",
+    "persons": ["Sheriff Truman", "Dale Cooper", "Albert Rosenfield", "Dale Cooper", "Albert Rosenfield"],
+    "copyright": {
+      "license": "CC-BY-SA 3.0.",
+      "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://en.wikiquote.org/wiki/Twin_Peaks"
     }
   },
   {
-    id: 70,
-    quoteText: "Gordon Cole: HEADIN' ON OVER TO BEND, OREGON. WHOLE LOTTA SHAKIN' GOING ON IN BEND!",
-    quoteTextOnly: "HEADIN' ON OVER TO BEND, OREGON. WHOLE LOTTA SHAKIN' GOING ON IN BEND!",
-    persons: ['Gordon Cole'],
-    copyright: {
-      license: 'CC-BY-SA 3.0.',
-      licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
-      source: 'https://en.wikiquote.org/wiki/Twin_Peaks'
+    "id": 69,
+    "quoteText": "The Giant: It is happening again. It is happening again.",
+    "quoteTextOnly": "It is happening again. It is happening again.",
+    "persons": ["The Giant"],
+    "copyright": {
+      "license": "CC-BY-SA 3.0.",
+      "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://en.wikiquote.org/wiki/Twin_Peaks"
     }
   },
   {
-    id: 85,
-    quoteText:
-      "Gordon Cole: DON'T LET'EM RATTLE YOU, COOP. THESE GUYS MAKE A LIVING LOOKING THROUGH OTHER PEOPLE'S DRAWERS. MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND. CATCH YOU LATER.",
-    quoteTextOnly:
-      "DON'T LET'EM RATTLE YOU, COOP. THESE GUYS MAKE A LIVING LOOKING THROUGH OTHER PEOPLE'S DRAWERS. MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND. CATCH YOU LATER.",
-    persons: ['Gordon Cole'],
-    copyright: {
-      license: 'CC-BY-SA 3.0.',
-      licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
-      source: 'https://en.wikiquote.org/wiki/Twin_Peaks'
-    }
-  },
-  {
-    id: 175,
-    quoteText: 'Gordon Cole: WE ARE LIKE THE DREAMER WHO DREAMS AND THEN LIVES INSIDE THE DREAM.',
-    quoteTextOnly: 'WE ARE LIKE THE DREAMER WHO DREAMS AND THEN LIVES INSIDE THE DREAM.',
-    persons: ['Gordon Cole'],
-    copyright: {
-      license: 'CC-BY-SA 3.0.',
-      licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
-      source: 'https://en.wikiquote.org/wiki/Twin_Peaks'
+    "id": 116,
+    "quoteText": "[Windom Earle has Major Briggs tied up to a giant dartboard.]\nWindom Earle: What is the capital of North Carolina?\nMajor Briggs: Raleigh.\nWindom Earle: Fat load of good that'll do me.",
+    "quoteTextOnly": "[Windom Earle has Major Briggs tied up to a giant dartboard.]\nWhat is the capital of North Carolina?\nRaleigh.\nFat load of good that'll do me.",
+    "persons": ["Windom Earle", "Major Briggs", "Windom Earle"],
+    "copyright": {
+      "license": "CC-BY-SA 3.0.",
+      "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://en.wikiquote.org/wiki/Twin_Peaks"
     }
   }
 ]
