@@ -1,0 +1,19 @@
+{
+  "name": "twin-peaks-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "scrape": "node quoteCollector.js"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "devDependencies": {
+    "puppeteer": "^2.0.0"
+  }
+}
