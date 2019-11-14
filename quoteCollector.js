@@ -1,10 +1,3 @@
-// 'h3 > span > i' => episode numbers
-// group of multiple
-// 'dl > dd > b' => person name
-// 'dl > dd' => person name + quote
-
-// https://en.wikiquote.org/wiki/Twin_Peaks
-
 /*
 MIT License
 
@@ -45,9 +38,9 @@ async function quoteCollector() {
   for (let i = 0; i < quoteLength; i++) {
     try {
       let quote = await page.evaluate(el => el.textContent, (await page.$$('dl'))[i])
-      let persons = quote.match(/((\S|^)[A-Z][a-z]+.[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm)
+      let persons = quote.match(/((\S|^)[A-Z][a-z]+..[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm)
       persons = persons.map(el => el.replace(/\:./gm, ''))
-      let quoteTextOnly = quote.replace(/((\S|^)[A-Z][a-z]+.[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm, '')
+      let quoteTextOnly = quote.replace(/((\S|^)[A-Z][a-z]+..[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm, '')
       quoteTextOnly = quoteTextOnly.trim()
 
       obj = {
@@ -66,7 +59,6 @@ async function quoteCollector() {
     } catch (e) {
       console.error(e)
     }
-    console.log(i)
     console.log(JSON.stringify(finalObj))
   }
 

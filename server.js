@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+'use strict'
+
 const express = require('express')
 const twinpeaks = require('./twinpeaksQuotes.json')
 
@@ -29,15 +31,30 @@ function endpointCreation() {
   try {
     const app = express()
     const port = process.env.PORT || 5000
+    const quotesLength = twinpeaks.quotes.length
 
-    // providing a dynamic endpoint for quotes
+    const randomizer = () => {
+      return Math.floor(Math.random() * Math.floor(quotesLength))
+    }
+
+    // providing a semi-static endpoint for **random** quotes
+    app.get('/api/quotes/recommend', async (req, res) => {
+      let recommendedResult = twinpeaks.quotes.filter(quote => {
+        if (quote.id == randomizer()) return quote
+      })
+
+      recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' })
+      console.log(`/api/quotes/recommend endpoint has been called!`)
+    })
+
+    // providing a dynamic endpoint for quotes by ID
     app.get('/api/quotes/:id', async (req, res) => {
       let id = req.params.id
       let idResult = twinpeaks.quotes.filter(quote => {
         if (quote.id == id) return quote
       })
 
-      idResult ? res.json(idResult) : res.json({ error: 'no such id!' })
+      idResult[0] ? res.json(idResult) : res.json({ error: 'no such id!' })
       console.log(`/api/quotes/${id} endpoint has been called!`)
     })
 
@@ -45,7 +62,7 @@ function endpointCreation() {
     app.get('/api/quotes', async (req, res) => {
       let query = req.query.q
       let personResult = twinpeaks.quotes.filter(quote => {
-        if (quote.persons == query) return quote
+        if (quote.quoteText.includes(query)) return quote // includes() is the worst choice I could made here
       })
       res.json(personResult)
       console.log(`/api/quotes?q=${query} endpoint has been called!`)
@@ -54,7 +71,7 @@ function endpointCreation() {
     app.listen(port)
 
     console.log(
-      `API is listening on ${port}\nEndpoint is ready at: localhost:${port}/api/quotes/ \n... and at /api/quotes?q=[search]`
+      `API is listening on ${port}\nEndpoint is ready at: localhost:${port}/api/quotes/ \nCheck documentation at: https://github.com/theDavidBarton/twin-peaks-api`
     )
   } catch (e) {
     console.error(e)
