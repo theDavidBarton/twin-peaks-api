@@ -14,7 +14,6 @@
     "node": "10.x"
   },
   "devDependencies": {
-    "lodash": "^4.17.15",
     "puppeteer": "^2.0.0"
   }
 }

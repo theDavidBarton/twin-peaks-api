@@ -23,23 +23,23 @@ SOFTWARE.
 */
 
 const express = require('express')
-const http = require('./twinpeaksQuotes.json')
+const twinpeaks = require('./twinpeaksQuotes.json')
 
 function endpointCreation() {
   try {
     const app = express()
     const port = process.env.PORT || 5000
 
-    // providing a dynamic endpoint for status code descriptions
+    // providing a dynamic endpoint for quotes
     app.get('/api/quotes/:id', async (req, res) => {
       let id = req.params.id
-      http.status[id] ? res.json(http.status[id]) : res.json({ error: 'no such id!' })
+      twinpeaks.quotes[id] ? res.json(twinpeaks.quotes[id]) : res.json({ error: 'no such id!' })
       console.log(`/api/quotes/${id} endpoint has been called!`)
     })
 
     app.listen(port)
 
-    console.log(`API is listening on ${port}`)
+    console.log(`API is listening on ${port}\nEndpoint is ready at: localhost:${port}/api/quotes/`)
   } catch (e) {
     console.error(e)
   }

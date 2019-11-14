@@ -30,97 +30,51 @@ SOFTWARE.
 */
 
 const puppeteer = require('puppeteer')
-const _ = require('lodash')
 const fs = require('fs')
-let finalObj = { status: {} }
+let finalObj = { quotes: [] }
 let finalObjJSON
 let obj
-let objCollector = []
-let currentDescription
-let currentName
-let currentType
 
-async function jsonFiller() {
+async function quoteCollector() {
   const browser = await puppeteer.launch({ headless: true })
   const page = await browser.newPage()
 
-  for (const code of availableCodes) {
-    for (const locale of availableLocales) {
-      try {
-        // scrape current content from MDN references
-        await page.goto(`https://developer.mozilla.org/${locale}/docs/Web/HTTP/Status/${code}`, {
-          waitUntil: 'domcontentloaded',
-          timeout: 0
-        })
+  await page.goto('https://en.wikiquote.org/wiki/Twin_Peaks')
+  const quoteLength = await page.$$eval('dl', el => el.length)
 
-        currentDescription = await page.evaluate(el => el.textContent, (await page.$$('#wikiArticle > p'))[0]) // TODO: collect all valid paragraphs
-        currentName = await page.evaluate(el => el.textContent, await page.$('h1'))
-        currentName = currentName.replace(/\d./g, '')
+  for (let i = 0; i < quoteLength; i++) {
+    try {
+      let quote = await page.evaluate(el => el.textContent, (await page.$$('dl'))[i])
+      let persons = quote.match(/((\S|^)[A-Z][a-z]+.[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm)
+      persons = persons.map(el => el.replace(/\:./gm, ''))
+      let quoteTextOnly = quote.replace(/((\S|^)[A-Z][a-z]+.[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm, '')
+      quoteTextOnly = quoteTextOnly.trim()
 
-        if (code < 200) {
-          // (100–199)
-          currentType = 'Informational responses'
-        } else if (code > 199 && code < 300) {
-          // (200–299)
-          currentType = 'Successful responses'
-        } else if (code > 299 && code < 400) {
-          // (300–399)
-          currentType = 'Redirects'
-        } else if (code > 399 && code < 500) {
-          // (400–499)
-          currentType = 'Client errors'
-        } else if (code > 499 && code < 600) {
-          // (500–599)
-          currentType = 'Server errors'
+      obj = {
+        id: i + 1,
+        quoteText: quote,
+        quoteTextOnly: quoteTextOnly,
+        persons: persons,
+        copyright: {
+          license: 'CC-BY-SA 3.0.',
+          licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
+          source: 'https://en.wikiquote.org/wiki/Twin_Peaks'
         }
-      } catch (e) {
-        console.error(e)
       }
-      // store current content in object
-      try {
-        obj = {
-          status: {
-            [code]: {
-              code: {},
-              type: {},
-              name: {},
-              i18n: {
-                [locale]: {
-                  description: {},
-                  copyright: { license: {}, licenseDetails: {}, source: {}, authors: {}, authorsDetails: {} }
-                }
-              }
-            }
-          }
-        }
 
-        obj.status[code].code = code
-        obj.status[code].type = currentType
-        obj.status[code].name = currentName
-        obj.status[code].i18n[locale].description = currentDescription
-        obj.status[code].i18n[locale].copyright.license = 'CC-BY-SA 2.5.'
-        obj.status[code].i18n[locale].copyright.licenseDetails = 'https://creativecommons.org/licenses/by-sa/2.5/'
-        obj.status[code].i18n[
-          locale
-        ].copyright.source = `https://developer.mozilla.org/${locale}/docs/Web/HTTP/Status/${code}`
-        obj.status[code].i18n[locale].copyright.authors = 'Mozilla Contributors'
-        obj.status[code].i18n[
-          locale
-        ].copyright.authorsDetails = `https://wiki.developer.mozilla.org/${locale}/docs/Web/HTTP/Status/${code}$history`
-
-        objCollector.push(obj)
-      } catch (e) {
-        console.error(e)
-      }
+      finalObj.quotes.push(obj)
+    } catch (e) {
+      console.error(e)
     }
+    console.log(i)
+    console.log(JSON.stringify(finalObj))
   }
-  browser.close()
 
-  // deep merge objects
-  finalObj = _.merge(...objCollector)
+  await browser.close()
+
   // write to file
   finalObjJSON = JSON.stringify(finalObj)
   console.log(finalObjJSON)
-  fs.writeFileSync('httpStatus.json', finalObjJSON)
+  fs.writeFileSync('twinpeaksQuotes.json', finalObjJSON)
 }
-jsonFiller()
+quoteCollector()
