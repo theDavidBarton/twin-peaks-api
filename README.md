@@ -1,6 +1,12 @@
+![heroku](https://img.shields.io/badge/Heroku-true-430098.svg?logo=heroku)
+
 # The Responses are Not What They Seem
 
 A quote API for the cult classic TV movie series: Twin Peaks - made in Node.Js and Express.
+
+Available at:  https://twin-peaks-api.herokuapp.com
+
+![welcome-to-twin-peaks](https://welcometotwinpeaks.com/wp-content/uploads/welcome-to-twin-peaks-sign-51201.jpg)
 
 ## Usage
 
@@ -8,11 +14,11 @@ A quote API for the cult classic TV movie series: Twin Peaks - made in Node.Js a
 
 Launch the express app with: `yarn start` or `node server.js`. Then you have three options:
 
-#### I. Random quote endpoint
+#### I. Random quote
 
 endpoint: `/api/quotes/recommend`
 
-http://localhost:5000/api/quotes/recommend
+http://localhost:5000/api/quotes/recommend (or https://twin-peaks-api.herokuapp.com/api/quotes/recommend)
 
 ```json
 [
@@ -30,11 +36,11 @@ http://localhost:5000/api/quotes/recommend
 ]
 ```
 
-#### II. Quote by ID endpoint
+#### II. Quote by ID
 
 endpoint: `/api/quotes/{id}`
 
-e.g.: http://localhost:5000/api/quotes/20
+e.g.: http://localhost:5000/api/quotes/20 (or https://twin-peaks-api.herokuapp.com/api/quotes/20)
 
 ```json
 [
@@ -56,7 +62,7 @@ e.g.: http://localhost:5000/api/quotes/20
 
 endpoint: `/api/quotes?q={keyword}` (spaces will be decoded like: ?q=the%20man%20from%20another%20place)
 
-e.g.: http://localhost:5000/api/quotes?q=giant
+e.g.: http://localhost:5000/api/quotes?q=giant (or https://twin-peaks-api.herokuapp.com/api/quotes?q=giant)
 
 ```json
 [
