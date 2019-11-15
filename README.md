@@ -4,7 +4,7 @@
 
 A quote API for the cult classic TV movie series: Twin Peaks - made in Node.Js and Express.
 
-Available at:  https://twin-peaks-api.herokuapp.com
+Available at: [https://twin-peaks-api.herokuapp.com](https://twin-peaks-api.herokuapp.com/api/quotes/recommend) (see endpoints and usage below)
 
 ![welcome-to-twin-peaks](https://welcometotwinpeaks.com/wp-content/uploads/welcome-to-twin-peaks-sign-51201.jpg)
 
@@ -118,6 +118,10 @@ e.g.: http://localhost:5000/api/quotes?q=giant (or https://twin-peaks-api.heroku
 A puppeteer (headless chrome) script crawls for quotes on [Wiki Qoute](https://en.wikiquote.org/wiki/Twin_Peaks).
 
 Run: `yarn scrape` or `node quoteCollector.js` to update the JSON file.
+
+### Deploy to environment
+
+`git push heroku master`
 
 # Copyright
 
