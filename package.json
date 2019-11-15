@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "scrape": "node quoteCollector.js"
+    "scrape": "node quoteCollector.js",
+    "how-much-is-the-fish": "heroku ps -a twin-peaks-api"
   },
   "engines": {
     "node": "10.x"
