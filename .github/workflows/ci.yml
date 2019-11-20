@@ -9,13 +9,11 @@ jobs:
   deploy-on-heroku:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Build docker image
-        uses: actions/docker/cli@master
-        with:
-          args: build -t $HEROKU_APP .
-        env:
-          HEROKU_APP: twin-peaks-api
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Yarn install
+        run: yarn
 
       - name: Heroku Login
         uses: actions/heroku@master
@@ -23,12 +21,11 @@ jobs:
           args: container:login
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP: twin-peaks-api
 
       - name: Heroku push
         uses: actions/heroku@master
         with:
-          args: container:push web -a $HEROKU_APP
+          args: container:push -a $HEROKU_APP web
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP: twin-peaks-api
@@ -36,7 +33,7 @@ jobs:
       - name: Heroku Release
         uses: actions/heroku@master
         with:
-          args: container:release web -a $HEROKU_APP
+          args: container:release -a $HEROKU_APP web
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP: twin-peaks-api
