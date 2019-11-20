@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: Build docker image
+        uses: actions/docker/cli@master
+        with:
+          args: build -t $HEROKU_APP .
+        env:
+          HEROKU_APP: twin-peaks-api
 
       - name: Heroku Login
         uses: actions/heroku@master
