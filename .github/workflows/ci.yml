@@ -15,7 +15,7 @@ jobs:
         with:
           args: build -t $HEROKU_APP .
         env:
-          HEROKU_APP: ${{ secrets.HEROKU_APP }}
+          HEROKU_APP: twin-peaks-api
 
       - name: Heroku Login
         uses: actions/heroku@master
