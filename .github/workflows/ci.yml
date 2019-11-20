@@ -12,33 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@master
       
-      - name: Use Node.js 10.x	
-        uses: actions/setup-node@v1	
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
         with:	
-          node-version: 10.x	
+          node-version: 10.x
 
-      - name: Yarn install	
-        run: yarn
-
-      - name: Heroku Login
-        uses: actions/heroku@master
-        with:
-          args: container:login
+      - name: deploy to heroku
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
-
-      - name: Heroku push
-        uses: actions/heroku@master
-        with:
-          args: container:push -a $HEROKU_APP web
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_APP: twin-peaks-api
-  
-      - name: Heroku Release
-        uses: actions/heroku@master
-        with:
-          args: container:release -a $HEROKU_APP web
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_APP: twin-peaks-api
+        if: github.ref == 'refs/heads/master' && job.status == 'success'
+        run: git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/twin-peaks-api.git origin/master:master
