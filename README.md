@@ -1,3 +1,4 @@
+[![Actions Status](https://github.com/theDavidBarton/twin-peaks-api/workflows/CI/badge.svg)](https://github.com/theDavidBarton/twin-peaks-api/actions)
 ![heroku](https://img.shields.io/badge/Heroku-true-430098.svg?logo=heroku)
 
 # The Responses are Not What They Seem
