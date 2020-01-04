@@ -8,17 +8,6 @@ on:
 jobs:
   deploy-on-heroku:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@master
-      
-      - name: Use Node.js 10.x
-        uses: actions/setup-node@v1
-        with:	
-          node-version: 10.x
-
-      - name: deploy to heroku
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
-        if: github.ref == 'refs/heads/master' && job.status == 'success'
-        run: git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/twin-peaks-api.git origin/master:master
+    steps: 
+    - name: Deploy to Heroku
+      run: echo "Follow deployment on Heroku https://dashboard.heroku.com/apps/twin-peaks-api/activity"
