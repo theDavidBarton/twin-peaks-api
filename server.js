@@ -25,11 +25,13 @@ SOFTWARE.
 'use strict'
 
 const express = require('express')
+const cors = require('cors')
 const twinpeaks = require('./twinpeaksQuotes.json')
 
 function endpointCreation() {
   try {
     const app = express()
+    app.use(cors())
     const port = process.env.PORT || 5000
     const quotesLength = twinpeaks.quotes.length
     const availableIds = twinpeaks.quotes.map(el => el.id)
