@@ -34,13 +34,17 @@ function endpointCreation() {
     app.use(cors())
     const port = process.env.PORT || 5000
     const quotesLength = twinpeaks.quotes.length
-    const availableIds = twinpeaks.quotes.map(el => el.id)
 
     // random number from the available IDs
-    const randomizer = () => {
+    const randomizer = quotesArray => {
       const randomizeNumberBetweenZeroAnd = max => {
         return Math.floor(Math.random() * Math.floor(max))
       }
+      const availableIdChecker = quotesArray => {
+        const availableIds = quotesArray.map(el => el.id)
+        return availableIds
+      }
+      const availableIds = availableIdChecker(quotesArray)
       let randomInteger = randomizeNumberBetweenZeroAnd(quotesLength)
       if (!availableIds.includes(randomInteger)) {
         randomInteger = randomizeNumberBetweenZeroAnd(quotesLength)
@@ -61,15 +65,17 @@ function endpointCreation() {
 
     app.get('/api/quotes/recommend', (req, res) => {
       const twinpeaksQuotesArray = twinpeaks.quotes
-
-      console.log(req.query.profanity)
-      console.log(req.query.relevance)
+      const profanityValue = req.query.profanity ? req.query.profanity : true
+      const relevanceValue = req.query.relevance ? req.query.relevance : 1
+      console.log(profanityValue, relevanceValue)
 
       const queriedArray = twinpeaksQuotesArray.filter(quote => {
-        if (quote.profanity === req.query.profanity || quote.relevance === req.query.relevance) return quote
+        if (quote.profanity === JSON.parse(profanityValue) && quote.relevance == JSON.parse(relevanceValue))
+          // TODO: still buggy, it let's you no such id
+          return quote
       })
 
-      const randomId = randomizer()
+      const randomId = randomizer(queriedArray)
       const recommendedResult = queriedArray.filter(quote => {
         if (quote.id == randomId) return quote
       })
