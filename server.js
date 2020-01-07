@@ -49,9 +49,28 @@ function endpointCreation() {
     }
 
     // providing endpoint for **random** quotes
+    /*
     app.get('/api/quotes/recommend', (req, res) => {
       const randomId = randomizer()
       const recommendedResult = twinpeaks.quotes.filter(quote => {
+        if (quote.id == randomId) return quote
+      })
+      recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' }) // this condition won't be applied, error handling happens in randomizer()
+      console.log(`/api/quotes/recommend endpoint has been called! ${randomId}`)
+    })*/
+
+    app.get('/api/quotes/recommend', (req, res) => {
+      const twinpeaksQuotesArray = twinpeaks.quotes
+
+      console.log(req.query.profanity)
+      console.log(req.query.relevance)
+
+      const queriedArray = twinpeaksQuotesArray.filter(quote => {
+        if (quote.profanity === req.query.profanity || quote.relevance === req.query.relevance) return quote
+      })
+
+      const randomId = randomizer()
+      const recommendedResult = queriedArray.filter(quote => {
         if (quote.id == randomId) return quote
       })
       recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' }) // this condition won't be applied, error handling happens in randomizer()
