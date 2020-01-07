@@ -18,8 +18,10 @@ Launch the express app with: `yarn start` or `node server.js`. Then you have thr
 #### I. Random quote
 
 **endpoint:** `/api/quotes/recommend`
+
 **parameter:** `?relevance=` accepted parameters: `1`, `2`, `3`, which can be combined based on your preferences (defaults to `1,2,3`!) 1 is the more relevant quote while 3 is very redundant and has more quoted persons (which is most likely not that catchy). You can check the conditions in [quoteCollector.js](./quoteCollector.js)'s relevanceDecider function.
-**parameter:** `?profanity=` acceptad a boolean `true` or `false` value (defaults to true!) English profane words and phrases retrieved from [Luis von Ahn’s Research Group (Carnegie Mellon)](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt).
+
+**parameter:** `?profanity=` accepted a boolean `true` or `false` value (defaults to true!) English profane words and phrases retrieved from [Luis von Ahn’s Research Group (Carnegie Mellon)](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt).
 
 http://localhost:5000/api/quotes/recommend?relevance=1&profanity=false (or https://twin-peaks-api.herokuapp.com/api/quotes/recommend?relevance=1&profanity=false)
 
