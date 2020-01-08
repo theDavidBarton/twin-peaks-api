@@ -33,16 +33,21 @@ function endpointCreation() {
     const app = express()
     app.use(cors())
     const port = process.env.PORT || 5000
-    const quotesLength = twinpeaks.quotes.length
-    const availableIds = twinpeaks.quotes.map(el => el.id)
 
     // random number from the available IDs
-    const randomizer = () => {
+    const randomizer = quotesArray => {
+      const quotesLength = twinpeaks.quotes.length
       const randomizeNumberBetweenZeroAnd = max => {
         return Math.floor(Math.random() * Math.floor(max))
       }
+      const availableIdChecker = quotesArray => {
+        const availableIds = quotesArray.map(el => el.id)
+        return availableIds
+      }
+      const availableIds = availableIdChecker(quotesArray)
       let randomInteger = randomizeNumberBetweenZeroAnd(quotesLength)
-      if (!availableIds.includes(randomInteger)) {
+      while (!availableIds.includes(randomInteger)) {
+        // console.log(`${randomInteger} is not among ${availableIds}`)
         randomInteger = randomizeNumberBetweenZeroAnd(quotesLength)
       }
       return randomInteger
@@ -50,12 +55,26 @@ function endpointCreation() {
 
     // providing endpoint for **random** quotes
     app.get('/api/quotes/recommend', (req, res) => {
-      const randomId = randomizer()
-      const recommendedResult = twinpeaks.quotes.filter(quote => {
+      const twinpeaksQuotesArray = twinpeaks.quotes
+      const profValue =
+        req.query.profanity && req.query.profanity.match(/^(true|false)$/) ? req.query.profanity : 'true,false'
+      const relValue =
+        req.query.relevance && req.query.relevance.match(/^(1|2|3|1,2|2,3|1,3|1,2,3)$/) ? req.query.relevance : '1,2,3'
+
+      const queriedArray = twinpeaksQuotesArray.filter(quote => {
+        const profanityRegex = RegExp(quote.profanity, 'g')
+        const relevanceRegex = RegExp(quote.relevance, 'g')
+        if (profValue.match(profanityRegex) && relValue.match(relevanceRegex)) return quote
+      })
+
+      const randomId = randomizer(queriedArray)
+      const recommendedResult = queriedArray.filter(quote => {
         if (quote.id == randomId) return quote
       })
       recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' }) // this condition won't be applied, error handling happens in randomizer()
-      console.log(`/api/quotes/recommend endpoint has been called! ${randomId}`)
+      console.log(
+        `/api/quotes/recommend?profanity=${profValue}&relevance=${relValue} endpoint has been called! => ${randomId}`
+      )
     })
 
     // providing a dynamic endpoint for quotes by ID

@@ -24,6 +24,8 @@ SOFTWARE.
 
 const puppeteer = require('puppeteer')
 const fs = require('fs')
+const profanityMap = require('./resources/profanityMap.json')
+const nameMatcherRegex = /((\S|^)([A-Z][a-z]+..|[A-Z][a-z]+.)([A-Z][a-z]+..|[A-Z][a-z]+.)([A-Z][a-z]+..|[A-Z][a-z]+.)[A-Z][a-z]+\:.)|(((\S|^)([A-Z][a-z]+..|[A-Z][a-z]+.)([A-Z][a-z]+..|[A-Z][a-z]+.)[A-Z][a-z]+\:.)|(\S|^)([A-Z][a-z]+..|[A-Z][a-z]+.)[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)|((\S|^)[A-Z]+\:.)|Janey-E\sJones\:.|Dale\sCooper's\sdoppelgänger\:/gm
 let finalObj = { quotes: [] }
 let finalObjJSON
 let obj
@@ -37,17 +39,60 @@ async function quoteCollector() {
 
   for (let i = 0; i < quoteLength; i++) {
     try {
-      let quote = await page.evaluate(el => el.textContent, (await page.$$('dl'))[i])
-      let persons = quote.match(/((\S|^)[A-Z][a-z]+..[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm)
-      persons = persons.map(el => el.replace(/\:./gm, ''))
-      let quoteTextOnly = quote.replace(/((\S|^)[A-Z][a-z]+..[A-Z][a-z]+\:.)|((\S|^)[A-Z][a-z]+\:.)/gm, '')
-      quoteTextOnly = quoteTextOnly.trim()
+      const quote = await page.evaluate(el => el.textContent, (await page.$$('dl'))[i])
+
+      const quoteCleaner = quote => {
+        let quoteTextOnly = quote.replace(nameMatcherRegex, '')
+        return (quoteTextOnly = quoteTextOnly.trim())
+      }
+
+      const quoteTextOnly = quoteCleaner(quote)
+
+      const personCollector = quote => {
+        let personsRaw = quote.match(nameMatcherRegex)
+        personsRaw = personsRaw.map(el => el.replace(/\:./gm, ''))
+        const persons = [...new Set(personsRaw)] // remove duplicates as if a person said multiple lines he/she would present multiple times
+        return persons
+      }
+
+      const persons = personCollector(quote)
+
+      // _English profane words and phrases retrieved from Luis von Ahn’s Research Group (Carnegie Mellon), url: https://www.cs.cmu.edu/~biglou/resources/bad-words.txt
+      const profanityFilter = quoteTextOnly => {
+        let profanity = false
+        profanityMap.map(el => {
+          if (quoteTextOnly.match(el)) {
+            console.log(`\n- [${i + 1}] "${quoteTextOnly.substring(0, 30)}" contains profanity: ${el}`)
+            profanity = true
+          }
+        })
+        return profanity
+      }
+
+      const profanity = profanityFilter(quoteTextOnly)
+
+      const relevanceDecider = quoteTextOnly => {
+        let relevance = 1
+        if (quoteTextOnly.length > 380 || (persons.length > 2 && quoteTextOnly.match(/\[.+\]/gm))) {
+          console.log(`\n- [${i + 1}] relevance is sorted to "2"`)
+          relevance = 2
+        }
+        if (quoteTextOnly.length > 900 || (persons.length > 3 && quoteTextOnly.match(/\[.+\]/gm))) {
+          console.log(`\n- [${i + 1}] relevance is sorted to "3"`)
+          relevance = 3 // https://www.youtube.com/watch?v=0P_HKQGq730
+        }
+        return relevance
+      }
+
+      const relevance = relevanceDecider(quoteTextOnly)
 
       obj = {
         id: i + 1,
         quoteText: quote,
         quoteTextOnly: quoteTextOnly,
         persons: persons,
+        profanity: profanity,
+        relevance: relevance,
         copyright: {
           license: 'CC-BY-SA 3.0.',
           licenseDetails: 'https://creativecommons.org/licenses/by-sa/3.0/',
@@ -59,14 +104,14 @@ async function quoteCollector() {
     } catch (e) {
       console.error(e)
     }
-    console.log(JSON.stringify(finalObj))
+    // uncomment this for snapshots
+    // console.log(JSON.stringify(finalObj))
   }
 
   await browser.close()
 
   // write to file
   finalObjJSON = JSON.stringify(finalObj)
-  console.log(finalObjJSON)
   fs.writeFileSync('twinpeaksQuotes.json', finalObjJSON)
 }
 quoteCollector()
