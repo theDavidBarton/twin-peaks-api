@@ -19,13 +19,15 @@ Launch the express app with: `yarn start` or `node server.js`. Then you have thr
 
 **endpoint:** `/api/quotes/recommend`
 
-**parameter:** `?relevance=` accepted parameters: `1`, `2`, `3`, which can be combined based on your preferences (defaults to `1,2,3`!) 1 is the more relevant quote while 3 is very redundant and has more quoted persons (which is most likely not that catchy). You can check the conditions in [quoteCollector.js](./quoteCollector.js)'s relevanceDecider function.
+**method:** `GET`
 
-**parameter:** `?profanity=` accepted a boolean `true` or `false` value (defaults to true!) English profane words and phrases retrieved from [Luis von Ahn’s Research Group (Carnegie Mellon)](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt).
+**parameter (optional):** `?relevance=` accepted parameters: `1`,`2`,`3`,`1,2`,`2,3`,`1,3`,`1,2,3` (defaults to `1,2,3`!) 1 is the more relevant quote while 3 is very redundant and has more quoted persons (which is most likely not that catchy). You can check the sorting conditions in [quoteCollector.js](./quoteCollector.js)'s relevanceDecider function.
 
-http://localhost:5000/api/quotes/recommend?relevance=1&profanity=false (or https://twin-peaks-api.herokuapp.com/api/quotes/recommend?relevance=1&profanity=false)
+**parameter (optional):** `?profanity=` accepted a boolean `true`, `false` or `true,false` value (defaults to `true,false`!) English profane words and phrases retrieved from [Luis von Ahn’s Research Group (Carnegie Mellon)](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt).
 
-http://localhost:5000/api/quotes/recommend (or https://twin-peaks-api.herokuapp.com/api/quotes/recommend)
+http://localhost:5000/api/quotes/recommend?relevance=1&profanity=false (or https://twin-peaks-api.herokuapp.com/api/...)
+
+**success response:**
 
 ```json
 [
@@ -45,11 +47,21 @@ http://localhost:5000/api/quotes/recommend (or https://twin-peaks-api.herokuapp.
 ]
 ```
 
+**error response:**
+
+```json
+{ "error": "no such id!" }
+```
+
 #### II. Quote by ID
 
 **endpoint:** `/api/quotes/{id}`
 
+**method:** `GET`
+
 e.g.: http://localhost:5000/api/quotes/20 (or https://twin-peaks-api.herokuapp.com/api/quotes/20)
+
+**success response:**
 
 ```json
 [
@@ -69,11 +81,23 @@ e.g.: http://localhost:5000/api/quotes/20 (or https://twin-peaks-api.herokuapp.c
 ]
 ```
 
+**error response:**
+
+```json
+{ "error": "no such id!" }
+```
+
 #### III. Quote by search parameter
 
 **endpoint:** `/api/quotes?q={keyword}` (spaces will be decoded like: ?q=the%20man%20from%20another%20place)
 
+**method:** `GET`
+
+**parameter (mandatory):** `?q=`
+
 e.g.: http://localhost:5000/api/quotes?q=giant (or https://twin-peaks-api.herokuapp.com/api/quotes?q=giant)
+
+**success response:**
 
 ```json
 [
@@ -130,6 +154,12 @@ e.g.: http://localhost:5000/api/quotes?q=giant (or https://twin-peaks-api.heroku
     }
   }
 ]
+```
+
+**"error" response:** (no results found)
+
+```json
+[]
 ```
 
 ### Updating the content

@@ -56,15 +56,16 @@ function endpointCreation() {
     // providing endpoint for **random** quotes
     app.get('/api/quotes/recommend', (req, res) => {
       const twinpeaksQuotesArray = twinpeaks.quotes
-      const profValue = req.query.profanity && req.query.profanity.match(/^(true|false)$/) ? req.query.profanity : 'true,false'
-      const relValue = req.query.relevance && req.query.relevance.match(/^(1|2|3|1,2|2,3|1,2,3)$/) ? req.query.relevance : '1,2,3'
+      const profValue =
+        req.query.profanity && req.query.profanity.match(/^(true|false)$/) ? req.query.profanity : 'true,false'
+      const relValue =
+        req.query.relevance && req.query.relevance.match(/^(1|2|3|1,2|2,3|1,3|1,2,3)$/) ? req.query.relevance : '1,2,3'
 
       const queriedArray = twinpeaksQuotesArray.filter(quote => {
         const profanityRegex = RegExp(quote.profanity, 'g')
         const relevanceRegex = RegExp(quote.relevance, 'g')
-        if (profValue.match(profanityRegex) && relValue.match(relevanceRegex))
-            return quote
-      })  
+        if (profValue.match(profanityRegex) && relValue.match(relevanceRegex)) return quote
+      })
 
       const randomId = randomizer(queriedArray)
       const recommendedResult = queriedArray.filter(quote => {
@@ -72,7 +73,7 @@ function endpointCreation() {
       })
       recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' }) // this condition won't be applied, error handling happens in randomizer()
       console.log(
-        `/api/quotes/recommend?profanity=${profValue}&relevance=${relValue} endpoint has been called! => ${randomId}, qs: p=${quote.profanity} r=${quote.relevance}`
+        `/api/quotes/recommend?profanity=${profValue}&relevance=${relValue} endpoint has been called! => ${randomId}`
       )
     })
 
