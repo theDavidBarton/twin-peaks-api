@@ -73,11 +73,11 @@ async function quoteCollector() {
 
       const relevanceDecider = quoteTextOnly => {
         let relevance = 1
-        if (quoteTextOnly.length > 380 || (persons.length > 2 && quoteTextOnly.match(/\[.+\]/gm))) {
+        if (quoteTextOnly.length > 380 || persons.length > 2 || quoteTextOnly.match(/\[.+\]/gm)) {
           console.log(`\n- [${i + 1}] relevance is sorted to "2"`)
           relevance = 2
         }
-        if (quoteTextOnly.length > 900 || (persons.length > 3 && quoteTextOnly.match(/\[.+\]/gm))) {
+        if (quoteTextOnly.length > 900 || persons.length > 3) {
           console.log(`\n- [${i + 1}] relevance is sorted to "3"`)
           relevance = 3 // https://www.youtube.com/watch?v=0P_HKQGq730
         }
