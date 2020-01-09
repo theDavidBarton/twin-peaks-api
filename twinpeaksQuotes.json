@@ -71,7 +71,7 @@
       "quoteTextOnly": "Who's the lady with the log?\nWe call her the Log Lady.\nShhhhhhh!",
       "persons": ["Dale Cooper", "Sheriff Truman", "Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -97,7 +97,7 @@
       "quoteTextOnly": "[voiceover] I carry a log — yes. Is it funny to you? It is not to me. Behind all things are reasons. Reasons can even explain the absurd. Do we have the time to learn the reasons behind the human being's varied behavior? I think not. Some take the time. Are they called detectives? Watch — and see what life teaches.",
       "persons": ["Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -123,7 +123,7 @@
       "quoteTextOnly": "[Pete Martell pours coffee for Dale Cooper and Sheriff Truman.]\nMr. Cooper, how do you take it?\nBlack as midnight on a moonless night.\nPretty black.",
       "persons": ["Pete Martell", "Dale Cooper"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -175,7 +175,7 @@
       "quoteTextOnly": "[voiceover] Sometime ideas, like men, jump up and say 'hello'. They introduce themselves, these ideas, with words. Are they words? These ideas speak so strangely. All that we see in this world is based on someone's ideas. Some ideas are destructive, some are constructive. Some ideas can arrive in the form of a dream. I can say it again: some ideas arrive in the form of a dream.",
       "persons": ["Log Lady"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -253,7 +253,7 @@
       "quoteTextOnly": "Nothing beats the taste sensation when maple syrup [claps his hands] collides with ham.",
       "persons": ["Dale Cooper"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -277,7 +277,7 @@
       "id": 22,
       "quoteText": "Albert Rosenfeld: Mr. Horne, I realize that your position in this fair community pretty well guarantees venality, insincerity, and a rather irritating method of expressing yourself. Stupidity, however, is not necessarily a inherent trait, therefore, please listen closely. You can have a funeral any old time. You dig a hole, you plant a coffin. I, however, cannot perform these tests next year, next month, next week or tomorrow - I must perform them now. I've got a lot of cutting and pasting to do, gentlemen, so why don't you please return to your porch rockers and resume whittling.\nSheriff Truman: I've had just about enough of you and your insults!\nAlbert Rosenfield: Oh yeah, well I've had about enough of morons and half wits, dolts, dunces, dullards and dumbbells ... and you, you chowder-head yokel, you blithering hayseed — you've had enough of me?\nSheriff Truman: Yes I have. [Punches Albert in face]\n...\nAlbert Rosenfield: The old rustic sucker-punch, huh? [calling after Truman] A hail of bullets would be nice!\nDale Cooper: That's enough! The sheriff didn't mean anything.\nAlbert Rosenfield: He hit me!\nDale Cooper: Well, I'm sure he meant to do that.",
       "quoteTextOnly": "Mr. Horne, I realize that your position in this fair community pretty well guarantees venality, insincerity, and a rather irritating method of expressing yourself. Stupidity, however, is not necessarily a inherent trait, therefore, please listen closely. You can have a funeral any old time. You dig a hole, you plant a coffin. I, however, cannot perform these tests next year, next month, next week or tomorrow - I must perform them now. I've got a lot of cutting and pasting to do, gentlemen, so why don't you please return to your porch rockers and resume whittling.\nI've had just about enough of you and your insults!\nOh yeah, well I've had about enough of morons and half wits, dolts, dunces, dullards and dumbbells ... and you, you chowder-head yokel, you blithering hayseed — you've had enough of me?\nYes I have. [Punches Albert in face]\n...\nThe old rustic sucker-punch, huh? [calling after Truman] A hail of bullets would be nice!\nThat's enough! The sheriff didn't mean anything.\nHe hit me!\nWell, I'm sure he meant to do that.",
-      "persons": ["Albert Rosenfield", "Sheriff Truman", "Dale Cooper"],
+      "persons": ["Albert Rosenfeld", "Sheriff Truman", "Albert Rosenfield", "Dale Cooper"],
       "profanity": true,
       "relevance": 3,
       "copyright": {
@@ -305,7 +305,7 @@
       "quoteTextOnly": "[voiceover] Even the ones who laugh are sometimes caught without an answer: these creatures who introduce themselves but we swear we have met them somewhere before. Yes, look in the mirror. What do you see? Is it a dream, or a nightmare? Are we being introduced against our will? Are they mirrors? I can see the smoke. I can smell the fire. The battle is drawing nigh.",
       "persons": ["Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -318,7 +318,7 @@
       "quoteTextOnly": "[Standing over Bernard's corpse] Jacques' back in Canada. We had a long talk, he's staying there. Jacques was the brains in the outfit. Bernie made bail this morning on possession.\nDo me know if uh, the late Bernard gave you up?\nI told him if he ever did I'd kill him.\nOh... did he?\nNah, he shouldn't have trusted me, but like I said, Bernie wasn't too bright.",
       "persons": ["Leo Johnson", "Benjamin Horne"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -370,7 +370,7 @@
       "quoteTextOnly": "[voiceover] I play my part on my stage. I tell what I can to form the perfect answer. But that answer cannot come before all are ready to hear. So I tell what I can to form the perfect answer. Sometimes my anger at the fire is evident. Sometimes it is not anger, really. It may appear as such, but could it be a clue? The fire I speak of is not a kind fire.",
       "persons": ["Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -383,7 +383,7 @@
       "quoteTextOnly": "Audrey, you'll have to excuse me this morning, I'm running late. I only have time for coffee.\nWell maybe I could go with you.\nWednesdays were traditionally a school day when I was your age.\nAudrey Horne : [moving in close] I can't believe you were ever my age.\nI've got the pictures to prove it. How old are you?\nEighteen.\nWell, see you later Audrey.",
       "persons": ["Dale Cooper", "Audrey Horne"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -682,7 +682,7 @@
       "quoteTextOnly": "So, what did this giant sound like, huh? I mean, did he have a big, booming voice or what?\nNo, no! He spoke softly, distinctly.\nAnd you gave him the beans you were supposed to use to buy a cow.\nNo, Albert! I gave him my ring.\nOkay. Uh, confining my conclusions to the planet Earth…",
       "persons": ["Sheriff Truman", "Dale Cooper", "Albert Rosenfield"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -695,7 +695,7 @@
       "quoteTextOnly": "[Albert gives his forensic conclusions on an unknown perpetrator.]\n… and he worked with Leo Johnson, currently appearing at Calhoun Memorial Hospital as Mr. Potato Head.",
       "persons": ["Albert Rosenfield"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -734,7 +734,7 @@
       "quoteTextOnly": "Lucy Moran [about Richard Tremayne]: He had lots of coats and keeps himself and his car in great shape. Most his behavior was asinine but at least he was different.\nAre you still seeing this … Dick?",
       "persons": ["Dale Cooper"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -760,7 +760,7 @@
       "quoteTextOnly": "[voiceover] Sometimes nature plays tricks on us and we imagine we are something other than what we truly are. Is this a key to life in general? Or the case of the two-headed schizophrenic? Both heads thought the other was following itself. Finally, when one head wasn't looking, the other shot the other right between the eyes, and, of course, killed himself.",
       "persons": ["Log Lady"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -851,7 +851,7 @@
       "quoteTextOnly": "[voiceover] A poem as lovely as a tree:As the night wind blows, the boughs move to and fro.The rustling, the magic rustling that brings on the dark dream.The dream of suffering and pain.Pain for the victim, pain for the inflicter of pain.A circle of pain, a circle of suffering.Woe to the ones who behold the pale horse.",
       "persons": ["Log Lady"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -864,7 +864,7 @@
       "quoteTextOnly": "[reading Harold Smith's suicide note.] \"J'ai une âme solitaire.\" I am a lonely soul. Poor guy.",
       "persons": ["Dale Cooper"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -942,7 +942,7 @@
       "quoteTextOnly": "Sheriff… no offense, but, eh… clearly, this man's stairs do not reach the attic. Now, your 24 hours are up! You either charge my client or let him go!\nBen Horne, I'm charging you with the murder of Laura Palmer.\nYeah. Good move, Jer!",
       "persons": ["Jerry Horne", "Sheriff Truman", "Benjamin Horne"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -955,7 +955,7 @@
       "quoteTextOnly": "[voiceover] So now the sadness comes — the revelation. There is a depression after an answer is given. It was almost fun not knowing. Yes, now we know. At least we know what we sought in the beginning. But there is still the question: why? And this question will go on and on until the final answer comes. Then the knowing is so full, there is no room for questions.",
       "persons": ["Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1124,7 +1124,7 @@
       "quoteTextOnly": "[voiceover] Is a dog man's best friend? I had a dog. The dog was large. It ate my garden, all the plants, and much earth. The dog ate so much earth it died. Its body went back to the earth. I have a memory of this dog. The memory is all that I have left of my dog. He was black — and white.",
       "persons": ["Log Lady"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1137,7 +1137,7 @@
       "quoteTextOnly": "[Dale Cooper and a real-estate agent arrive at a decrepit-looking house that Cooper is interested in buying]\nReal-estate agent: Well, it's still standing, almost by force of habit.\nA little habit can provide a strong foundation.",
       "persons": ["Dale Cooper"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1150,7 +1150,7 @@
       "quoteTextOnly": "[Agent Bryson asks admiringly after the departing Audrey Horne.]\nDenise, I would assume you're no longer interested in girls.\nCoop, I may be wearing a dress, but I still pull my panties on one leg at a time if you know what I mean.\nNot really.",
       "persons": ["Dale Cooper", "Denise Bryson"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1202,7 +1202,7 @@
       "quoteTextOnly": "[voiceover] The heart — it is a physical organ, we all know. But how much more an emotional organ — this we also know. Love, like blood, flows from the heart. Are blood and love related? Does a heart pump blood as it pumps love? Is love the blood of the universe?",
       "persons": ["Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1228,7 +1228,7 @@
       "quoteTextOnly": "[Twin Peaks Mayor Dwayne Milford is holding Dr. Jacoby, Lana Budding Milford, Dale Cooper and the sheriff at gunpoint. He holds Lana responsible for the death of his brother, Dougie Milford]\nFellas, I've got an idea. Why don't we let Lana and the mayor talk things over together. Alone.\nI don't wanna talk. I wanna shoot.\nNow Dwayne you can always shoot later. Talk first.",
       "persons": ["Dale Cooper", "Mayor Milford"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1267,7 +1267,7 @@
       "quoteTextOnly": "[Albert observes suspended Agent Cooper's plaid shirt and khaki slacks.]\nOh, Coop, uh, about the uniform…\nYes, Albert?\nReplacing the quiet elegance of the dark suit and tie with the casual indifference of these muted earth tones is a form of fashion suicide, but, uh, call me crazy — on you it works.",
       "persons": ["Albert Rosenfield", "Dale Cooper"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1293,7 +1293,7 @@
       "quoteTextOnly": "[Albert and Cooper are discussing whether to arrest Josie Packard.]\nThere's an epidemic of multiple gunshot wounds following this chick around. She is a menace.\nI'll talk to her. Maybe she'll confess. Turn herself in.\n[sarcastically] Maybe she'll grow wings and join the circus.",
       "persons": ["Albert Rosenfield", "Dale Cooper"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1306,7 +1306,7 @@
       "quoteTextOnly": "[Norma visits Hank in prison to ask him for a divorce. Hank tries to get Norma to lie to make up an alibi for him]\n[aggressively] Okay. Then there's the deal. You give me my alibi, and I give you your divorce.\nI didn't come here to negotiate with you. This is it. It's over!\nFine. Go ahead. You're his whore Norma.\nI'd rather be his whore,... than your wife!",
       "persons": ["Hank Jennings", "Norma Jennings"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1358,7 +1358,7 @@
       "quoteTextOnly": "[voiceover] The beautiful thing about treasure is that it exists. It exists to be found. How beautiful it is to find treasure. Where is the treasure, that when found, leaves one eternally happy? I think we all know it exists. Some say it is inside us — inside us one and all. That would be strange. It would be so near. Then why is it so hard to find, and so difficult to attain?",
       "persons": ["Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1436,7 +1436,7 @@
       "quoteTextOnly": "COOP! THEY SAY THAT LOVE MAKES THE WORLD GO ROUND, MAKES PEOPLE WHO NEED PEOPLE THE LUCKIEST PEOPLE IN THE WORLD. ALTHOUGH THEY NEVER SAID A DOG GUN THING ABOUT A CURE FOR HEARING LOSS. [to Shelly] Shelly, you are a miracle worker and a goddess sent from heaven.\nI’m a waitress in a diner I’ve never been compared to a goddess before.\nWell shelly you just don’t know your own value. [to Dale Cooper] COOP! SHE’S A RARE AND PRECIOUS INDIVIDUAL, DON’T YOU THINK?\nI know what you mean Gordon.\n[turns to Shelly] Shelly turn around and face me a moment before I lose my nerve. I’m about ready to leave Twin Peaks and I don’t know when I’m gonna return but I want you to know that meeting you has been more than a privilege, you touched my heart and I know that if I don’t kiss you now I’m gonna regret it the rest of my days.\n[seeing Gordon and Shelly kiss] Hey! What the hell's going on?\nYOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT. [to Shelly] Acts like he's never seen a kiss before.\nUh, Gordon…\nTAKE ANOTHER LOOK, SONNY. IT'S GONNA HAPPEN AGAIN!",
       "persons": ["Gordon Cole", "Shelly Johnson", "Dale Cooper", "Bobby Briggs"],
       "profanity": true,
-      "relevance": 2,
+      "relevance": 3,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1488,7 +1488,7 @@
       "quoteTextOnly": "[Windom Earle has Major Briggs tied up to a giant dartboard.]\nWhat is the capital of North Carolina?\nRaleigh.\nFat load of good that'll do me.",
       "persons": ["Windom Earle", "Major Briggs"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1501,7 +1501,7 @@
       "quoteTextOnly": "Garland, what do you fear most in the world?\nThe possibility that love is not enough.\n[laughs] Oh Garland, please! I shall weep.",
       "persons": ["Windom Earle", "Major Briggs"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1592,7 +1592,7 @@
       "quoteTextOnly": "[voiceover] And now, an ending. Where there was once one, there are now two. Or were there always two? What is a reflection? A chance to see two? When there are chances for reflections, there can always be two — or more. Only when we are everywhere will there be just one. It has been a pleasure speaking to you.",
       "persons": ["Log Lady"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1800,7 +1800,7 @@
       "quoteTextOnly": "This is what we found in his trunk: cocaine, machine gun, dog leg.\nWhat, no cheese and crackers?\nAPOLOGIES IN ADVANCE FOR ALBERT.",
       "persons": ["Inspector Randy Hollister", "Albert Rosenfield", "Gordon Cole"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1813,7 +1813,7 @@
       "quoteTextOnly": "Cause of death: Took me a while, but I think someone cut this man's head off.\nHere's the headline.\nActually, I just gave you the headline. [awkward silence] Yeah, I'm still doing stand-up on the weekends.",
       "persons": ["Constance Talbot", "Detective Dave Macklay"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1878,7 +1878,7 @@
       "quoteTextOnly": "[caught in a rainstorm] Fuck Gene Kelly, motherfucker!",
       "persons": ["Albert Rosenfield"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1943,7 +1943,7 @@
       "quoteTextOnly": "[holding a room key] Room 315. Wait a minute. I think that was the room where Agent Cooper was shot.\nWho's Agent Cooper?\nFBI. He was here, I don't know, maybe 25 years ago investigating the murder of Laura Palmer.\nWho's Laura Palmer?\nOh, that, my dear, is a long story.",
       "persons": ["Ben Horne", "Beverly Paige"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1956,7 +1956,7 @@
       "quoteTextOnly": "Ray, I want that information.\nOh, yeah?\n [draws a gun] Looks like you're out half a million.\nOh, I don't think so.\n[Ray draws a gun as well. Cooper's doppelgänger pulls the trigger, but nothing happens]\nI tricked you, fucker!\n[He shoots Cooper's doppelgänger in the chest]",
       "persons": ["Dale Cooper's doppelgänger:", "Ray Monroe"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1969,7 +1969,7 @@
       "quoteTextOnly": "[repeated line] Got a light?",
       "persons": ["Woodsman"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -1995,7 +1995,7 @@
       "quoteTextOnly": "[Diane glares at Albert]\nI know, I know. \"Fuck you, Albert.\"",
       "persons": ["Albert Rosenfield"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -2125,7 +2125,7 @@
       "quoteTextOnly": "Diane, we know your work with Agent Cooper has given you more than a passing insight into the Blue Rose. Even though you're no longer a part of the bureau, we'd like to deputize you.\nOn a temporary basis, because we really need your help.\nWhat's in it for me?\nSome cash. Not much. Maybe the satisfaction of learning what happened to your friend Cooper.\nLet's rock.",
       "persons": ["Albert Rosenfield", "Gordon Cole", "Diane Evans"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -2151,7 +2151,7 @@
       "quoteTextOnly": "Friends, we all live in the mud. In the shit! Shovel your way out of the shit. This is your shiny gold shovel. Two coats, guaranteed. Shovel your way out of the shit and into the truth.\n[amorously] It's working for me, Dr. Amp.",
       "persons": ["Dr. Jacoby", "Nadine Hurley"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -2294,7 +2294,7 @@
       "quoteTextOnly": "[after watching a shoot-out]\nWhat the fuck kind of neighborhood is this?\nPeople are under a lot of stress, Bradley.",
       "persons": ["Bradley Mitchum", "Rodney Mitchum"],
       "profanity": true,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -2307,7 +2307,7 @@
       "quoteTextOnly": "You are awake.\n100%.\nFinally.",
       "persons": ["The One Armed Man", "Dale Cooper", "MIKE"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -2320,7 +2320,7 @@
       "quoteTextOnly": "You're a fine man, Bushnell Mullins. I will not soon forget your kindness and decency.\n[Cooper shakes Bushnell's hand and turns to go]\nWhat about the FBI?\nI am the FBI.",
       "persons": ["Dale Cooper", "Bushnell Mullins"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -2385,7 +2385,7 @@
       "quoteTextOnly": "Is it you? Is it really you?\nYes. It's really me, Diane. Is it really you?\n[smiles] Yes.",
       "persons": ["Diane Evans", "Dale Cooper"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
@@ -2398,7 +2398,7 @@
       "quoteTextOnly": "You sure you want to do this? [pause] You don't know what it's gonna be like once we...\nI know that. We're at that point now. I can feel it.",
       "persons": ["Diane Evans", "Dale Cooper"],
       "profanity": false,
-      "relevance": 1,
+      "relevance": 2,
       "copyright": {
         "license": "CC-BY-SA 3.0.",
         "licenseDetails": "https://creativecommons.org/licenses/by-sa/3.0/",
