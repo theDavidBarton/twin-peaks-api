@@ -5,7 +5,7 @@
 
 A quote API for the cult classic TV movie series: Twin Peaks - made in Node.Js and Express.
 
-Available at: [https://twin-peaks-api.herokuapp.com](https://twin-peaks-api.herokuapp.com/api/quotes/recommend) (see endpoints and usage below)
+Available at: [https://twin-peaks-api.herokuapp.com](https://twin-peaks-api.herokuapp.com/api/1/quotes/recommend) (see endpoints and usage below)
 
 ![welcome-to-twin-peaks](https://welcometotwinpeaks.com/wp-content/uploads/welcome-to-twin-peaks-sign-51201.jpg)
 
@@ -17,7 +17,7 @@ Launch the express app with: `yarn start` or `node server.js`. Then you have thr
 
 #### I. Random quote
 
-**endpoint:** `/api/quotes/recommend`
+**endpoint:** `/api/1/quotes/recommend`
 
 **method:** `GET`
 
@@ -25,7 +25,7 @@ Launch the express app with: `yarn start` or `node server.js`. Then you have thr
 
 **parameter (optional):** `?profanity=` accepted a boolean `true`, `false` or `true,false` value (defaults to `true,false`!) English profane words and phrases retrieved from [Luis von Ahn’s Research Group (Carnegie Mellon)](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt).
 
-http://localhost:5000/api/quotes/recommend?relevance=1&profanity=false (or https://twin-peaks-api.herokuapp.com/api/...)
+http://localhost:5000/api/1/quotes/recommend?relevance=1&profanity=false (or https://twin-peaks-api.herokuapp.com/api/1/...)
 
 **success response:**
 
@@ -59,11 +59,11 @@ code: `404`
 
 #### II. Quote by ID
 
-**endpoint:** `/api/quotes/{id}`
+**endpoint:** `/api/1/quotes/{id}`
 
 **method:** `GET`
 
-e.g.: http://localhost:5000/api/quotes/20 (or https://twin-peaks-api.herokuapp.com/api/quotes/20)
+e.g.: http://localhost:5000/api/1/quotes/20 (or https://twin-peaks-api.herokuapp.com/api/1/quotes/20)
 
 **success response:**
 
@@ -97,13 +97,13 @@ code: `404`
 
 #### III. Quote by search parameter
 
-**endpoint:** `/api/quotes?q={keyword}` (spaces will be decoded like: ?q=the%20man%20from%20another%20place)
+**endpoint:** `/api/1/quotes?q={keyword}` (spaces will be decoded like: ?q=the%20man%20from%20another%20place)
 
 **method:** `GET`
 
 **parameter (mandatory):** `?q=`
 
-e.g.: http://localhost:5000/api/quotes?q=giant (or https://twin-peaks-api.herokuapp.com/api/quotes?q=giant)
+e.g.: http://localhost:5000/api/1/quotes?q=giant (or https://twin-peaks-api.herokuapp.com/api/1/quotes?q=giant)
 
 **success response:**
 
