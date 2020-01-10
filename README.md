@@ -21,13 +21,15 @@ Launch the express app with: `yarn start` or `node server.js`. Then you have thr
 
 **method:** `GET`
 
-**parameter (optional):** `?relevance=` accepted parameters: `1`,`2`,`3`,`1,2`,`2,3`,`1,3`,`1,2,3` (defaults to `1,2,3`!) 1 is the more relevant quote while 3 is very redundant and has more quoted persons (which is most likely not that catchy). You can check the sorting conditions in [quoteCollector.js](./quoteCollector.js)'s relevanceDecider function.
+**parameter (optional):** `?relevance=` accepted parameters: `1`; `2`; `3`; `1,2`; `2,3`; `1,3` or `1,2,3` (defaults to `1,2,3`!) 1 is the more relevant quote while 3 is very redundant and has more quoted persons (which is most likely not that catchy). You can check the sorting conditions in [quoteCollector.js](./quoteCollector.js)'s relevanceDecider function.
 
 **parameter (optional):** `?profanity=` accepted a boolean `true`, `false` or `true,false` value (defaults to `true,false`!) English profane words and phrases retrieved from [Luis von Ahn’s Research Group (Carnegie Mellon)](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt).
 
 http://localhost:5000/api/quotes/recommend?relevance=1&profanity=false (or https://twin-peaks-api.herokuapp.com/api/...)
 
 **success response:**
+
+code: `200`
 
 ```json
 [
@@ -49,6 +51,8 @@ http://localhost:5000/api/quotes/recommend?relevance=1&profanity=false (or https
 
 **error response:**
 
+code: `404`
+
 ```json
 { "error": "no such id!" }
 ```
@@ -62,6 +66,8 @@ http://localhost:5000/api/quotes/recommend?relevance=1&profanity=false (or https
 e.g.: http://localhost:5000/api/quotes/20 (or https://twin-peaks-api.herokuapp.com/api/quotes/20)
 
 **success response:**
+
+code: `200`
 
 ```json
 [
@@ -83,6 +89,8 @@ e.g.: http://localhost:5000/api/quotes/20 (or https://twin-peaks-api.herokuapp.c
 
 **error response:**
 
+code: `404`
+
 ```json
 { "error": "no such id!" }
 ```
@@ -98,6 +106,8 @@ e.g.: http://localhost:5000/api/quotes/20 (or https://twin-peaks-api.herokuapp.c
 e.g.: http://localhost:5000/api/quotes?q=giant (or https://twin-peaks-api.herokuapp.com/api/quotes?q=giant)
 
 **success response:**
+
+code: `200`
 
 ```json
 [
@@ -157,6 +167,8 @@ e.g.: http://localhost:5000/api/quotes?q=giant (or https://twin-peaks-api.heroku
 ```
 
 **"error" response:** (no results found)
+
+code: `200`
 
 ```json
 []

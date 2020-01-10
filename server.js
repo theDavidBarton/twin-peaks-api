@@ -71,7 +71,7 @@ function endpointCreation() {
       const recommendedResult = queriedArray.filter(quote => {
         if (quote.id == randomId) return quote
       })
-      recommendedResult[0] ? res.json(recommendedResult) : res.json({ error: 'no such id!' }) // this condition won't be applied, error handling happens in randomizer()
+      recommendedResult[0] ? res.json(recommendedResult) : res.status(404).json({ error: 'no such id!' }) // this condition won't be applied, error handling happens in randomizer()
       console.log(
         `/api/quotes/recommend?profanity=${profValue}&relevance=${relValue} endpoint has been called! => ${randomId}`
       )
@@ -83,7 +83,7 @@ function endpointCreation() {
       const idResult = twinpeaks.quotes.filter(quote => {
         if (quote.id == id) return quote
       })
-      idResult[0] ? res.json(idResult) : res.json({ error: 'no such id!' })
+      idResult[0] ? res.json(idResult) : res.status(404).json({ error: 'no such id!' })
       console.log(`/api/quotes/${id} endpoint has been called!`)
     })
 
