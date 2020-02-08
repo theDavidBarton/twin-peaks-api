@@ -11,7 +11,17 @@ Available at: [https://twin-peaks-api.herokuapp.com](https://twin-peaks-api.hero
 
 ## Usage
 
-### API
+### Node api
+
+```javascript
+const { recommend, getId, search } = require('./twinpeaks')
+
+const recommendedQuote = recommend() // (1) 'true'/'false'; (2) '1,2,3' etc. see with HTTP api
+const getQuoteById = getId(20)
+const searchQuote = search('the giant')
+```
+
+### HTTP api
 
 Launch the express app with: `yarn start` or `node server.js`. Then you have three options:
 
@@ -25,7 +35,7 @@ Launch the express app with: `yarn start` or `node server.js`. Then you have thr
 
 **parameter (optional):** `?profanity=` accepted a boolean `true`, `false` or `true,false` value (defaults to `true,false`!) English profane words and phrases retrieved from [Luis von Ahn’s Research Group (Carnegie Mellon)](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt).
 
-http://localhost:5000/api/1/quotes/recommend?relevance=1&profanity=false (or https://twin-peaks-api.herokuapp.com/api/1/...)
+http://localhost:5000/api/1/quotes/recommend?relevance=1&profanity=false
 
 **success response:**
 
@@ -63,7 +73,7 @@ code: `404`
 
 **method:** `GET`
 
-e.g.: http://localhost:5000/api/1/quotes/20 (or https://twin-peaks-api.herokuapp.com/api/1/quotes/20)
+e.g.: http://localhost:5000/api/1/quotes/20
 
 **success response:**
 
@@ -103,7 +113,7 @@ code: `404`
 
 **parameter (mandatory):** `?q=`
 
-e.g.: http://localhost:5000/api/1/quotes?q=giant (or https://twin-peaks-api.herokuapp.com/api/1/quotes?q=giant)
+e.g.: http://localhost:5000/api/1/quotes?q=giant
 
 **success response:**
 

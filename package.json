@@ -1,7 +1,11 @@
 {
   "name": "twin-peaks-api",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "A quote API for the cult classic TV movie series: Twin Peaks - made in Node.Js and Express.",
+  "main": "twinpeaks.js",
+  "author": "David Barton (theDavidBarton)",
+  "repository": "https://github.com/theDavidBarton/twin-peaks-api",
+  "homepage": "https://github.com/theDavidBarton/twin-peaks-api#readme",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
@@ -17,5 +21,11 @@
   },
   "devDependencies": {
     "puppeteer": "^2.0.0"
-  }
+  },
+  "keywords": [
+    "api",
+    "twinpeaks",
+    "movie",
+    "quote"
+  ]
 }
