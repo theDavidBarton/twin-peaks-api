@@ -5,7 +5,7 @@
 
 A quote API for the cult classic TV movie series: Twin Peaks - made in Node.Js and Express.
 
-Available at: [https://twin-peaks-api.herokuapp.com](https://twin-peaks-api.herokuapp.com/api/1/quotes/recommend) (see endpoints and usage below)
+Available at: [https://thedavidbarton.herokuapp.com/api/1/quotes/](https://thedavidbarton.herokuapp.com/api/1/quotes/recommend) (see endpoints and usage below)
 
 ![welcome-to-twin-peaks](https://welcometotwinpeaks.com/wp-content/uploads/welcome-to-twin-peaks-sign-51201.jpg)
 
