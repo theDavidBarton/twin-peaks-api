@@ -26,7 +26,7 @@ SOFTWARE.
 
 const express = require('express')
 const cors = require('cors')
-const twinpeaks = require('./twinpeaksQuotes.json')
+const { recommend, getId, search } = require('./twinpeaks')
 
 function endpointCreation() {
   try {
@@ -34,55 +34,21 @@ function endpointCreation() {
     app.use(cors())
     const port = process.env.PORT || 5000
 
-    // random number from the available IDs
-    const randomizer = quotesArray => {
-      const quotesLength = twinpeaks.quotes.length
-      const randomizeNumberBetweenZeroAnd = max => {
-        return Math.floor(Math.random() * Math.floor(max))
-      }
-      const availableIdChecker = quotesArray => {
-        const availableIds = quotesArray.map(el => el.id)
-        return availableIds
-      }
-      const availableIds = availableIdChecker(quotesArray)
-      let randomInteger = randomizeNumberBetweenZeroAnd(quotesLength)
-      while (!availableIds.includes(randomInteger)) {
-        // console.log(`${randomInteger} is not among ${availableIds}`)
-        randomInteger = randomizeNumberBetweenZeroAnd(quotesLength)
-      }
-      return randomInteger
-    }
-
     // providing endpoint for **random** quotes
     app.get('/api/1/quotes/recommend', (req, res) => {
-      const twinpeaksQuotesArray = twinpeaks.quotes
-      const profValue =
-        req.query.profanity && req.query.profanity.match(/^(true|false)$/) ? req.query.profanity : 'true,false'
-      const relValue =
-        req.query.relevance && req.query.relevance.match(/^(1|2|3|1,2|2,3|1,3|1,2,3)$/) ? req.query.relevance : '1,2,3'
-
-      const queriedArray = twinpeaksQuotesArray.filter(quote => {
-        const profanityRegex = RegExp(quote.profanity, 'g')
-        const relevanceRegex = RegExp(quote.relevance, 'g')
-        if (profValue.match(profanityRegex) && relValue.match(relevanceRegex)) return quote
-      })
-
-      const randomId = randomizer(queriedArray)
-      const recommendedResult = queriedArray.filter(quote => {
-        if (quote.id == randomId) return quote
-      })
+      const recommendedResult = recommend(req.query.profanity, req.query.relevance)
       recommendedResult[0] ? res.json(recommendedResult) : res.status(404).json({ error: 'no such id!' }) // this condition won't be applied, error handling happens in randomizer()
       console.log(
-        `/api/1/quotes/recommend?profanity=${profValue}&relevance=${relValue} endpoint has been called! => ${randomId}`
+        `/api/1/quotes/recommend?profanity=${req.query.profanity ? req.query.profanity : 'true,false'}&relevance=${
+          req.query.relevance ? req.query.relevance : '1,2,3'
+        } endpoint has been called!`
       )
     })
 
     // providing a dynamic endpoint for quotes by ID
     app.get('/api/1/quotes/:id', (req, res) => {
       const id = req.params.id
-      const idResult = twinpeaks.quotes.filter(quote => {
-        if (quote.id == id) return quote
-      })
+      const idResult = getId(id)
       idResult[0] ? res.json(idResult) : res.status(404).json({ error: 'no such id!' })
       console.log(`/api/1/quotes/${id} endpoint has been called!`)
     })
@@ -90,10 +56,7 @@ function endpointCreation() {
     // providing a dynamic endpoint for searches
     app.get('/api/1/quotes', (req, res) => {
       const query = req.query.q
-      const queryRegex = RegExp(query, 'gi')
-      const personResult = twinpeaks.quotes.filter(quote => {
-        if (queryRegex.test(quote.quoteText)) return quote
-      })
+      const personResult = search(query)
       res.json(personResult)
       console.log(`/api/1/quotes?q=${query} endpoint has been called!`)
     })
