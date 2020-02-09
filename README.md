@@ -1,5 +1,6 @@
 [![Actions Status](https://github.com/theDavidBarton/twin-peaks-api/workflows/CI/badge.svg)](https://github.com/theDavidBarton/twin-peaks-api/actions)
 ![heroku](https://img.shields.io/badge/Heroku-true-430098.svg?logo=heroku)
+[![npm package](https://img.shields.io/npm/v/twin-peaks-api.svg)](https://www.npmjs.com/package/twin-peaks-api)
 
 # The Responses are Not What They Seem
 
@@ -14,9 +15,9 @@ Available at: [https://twin-peaks-api.herokuapp.com](https://twin-peaks-api.hero
 ### Node api
 
 ```javascript
-const { recommend, getId, search } = require('./twinpeaks')
+const { recommend, getId, search } = require('twin-peaks-api')
 
-const recommendedQuote = recommend() // (1) 'true'/'false'; (2) '1,2,3' etc. see with HTTP api
+const recommendedQuote = recommend() // optional params: [profanity {string}], [relevance {string}] see usage at HTTP api
 const getQuoteById = getId(20)
 const searchQuote = search('the giant')
 ```
