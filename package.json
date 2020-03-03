@@ -17,7 +17,7 @@
     "how-much-is-the-fish": "heroku ps -a twin-peaks-api"
   },
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "devDependencies": {
     "puppeteer": "^2.0.0"
