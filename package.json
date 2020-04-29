@@ -20,7 +20,7 @@
     "node": "12.x"
   },
   "devDependencies": {
-    "puppeteer": "^2.0.0"
+    "puppeteer": "^3.0.2"
   },
   "keywords": [
     "api",
