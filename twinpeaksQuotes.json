@@ -2069,8 +2069,8 @@
     },
     {
       "id": 164,
-      "quoteText": "Log Lady: My log is afraid of fire. There's fire where you are are going. Hawk, there's fire where you are going.",
-      "quoteTextOnly": "My log is afraid of fire. There's fire where you are are going. Hawk, there's fire where you are going.",
+      "quoteText": "Log Lady: My log is afraid of fire. There's fire where you are going. Hawk, there's fire where you are going.",
+      "quoteTextOnly": "My log is afraid of fire. There's fire where you are going. Hawk, there's fire where you are going.",
       "persons": ["Log Lady"],
       "profanity": false,
       "relevance": 1,
