@@ -188,7 +188,7 @@ code: `200`
 
 ### Updating the content
 
-A puppeteer (headless chrome) script crawls for quotes on [Wiki Qoute](https://en.wikiquote.org/wiki/Twin_Peaks).
+A puppeteer (headless chrome) script crawls for quotes on [Wiki Quote](https://en.wikiquote.org/wiki/Twin_Peaks).
 
 Run: `yarn scrape` or `node quoteCollector.js` to update the JSON file.
 
