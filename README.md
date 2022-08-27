@@ -1,5 +1,4 @@
 [![Actions Status](https://github.com/theDavidBarton/twin-peaks-api/workflows/CI/badge.svg)](https://github.com/theDavidBarton/twin-peaks-api/actions)
-[![Dependency Status](https://david-dm.org/theDavidBarton/twin-peaks-api.svg)](https://david-dm.org/theDavidBarton/twin-peaks-api/)
 ![crocodile](https://img.shields.io/badge/crocodiles_in_the_basement-%F0%9F%90%8A_yes-orange.svg)
 [![npm package](https://img.shields.io/npm/v/twin-peaks-api.svg)](https://www.npmjs.com/package/twin-peaks-api)
 
@@ -7,7 +6,7 @@
 
 A quote API for the cult classic TV movie series: Twin Peaks - made in Node.Js and Express.
 
-Available at: [https://thedavidbarton.herokuapp.com/api/1/quotes/](https://thedavidbarton.herokuapp.com/api/1/quotes/recommend) (see endpoints and usage below)
+Available at: _see link in the repository's 'about' section_ (see endpoints and usage below)
 
 ![welcome-to-twin-peaks](https://welcometotwinpeaks.com/wp-content/uploads/welcome-to-twin-peaks-sign-51201.jpg)
 
